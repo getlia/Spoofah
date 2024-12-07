@@ -49,7 +49,7 @@ ipconfig /renew
 netsh winsock reset
  
 :: Generate and implement a random MAC address
-echo Spoofing MAC Address. It is not stuck; just wait.
+echo Spoofing MAC Address. It takes his own time :).
 setlocal enabledelayedexpansion
  
 FOR /F "tokens=1" %%a IN ('wmic nic where physicaladapter^=true get deviceid ^| findstr [0-9]') DO (
