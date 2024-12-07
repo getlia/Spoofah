@@ -76,9 +76,15 @@ net1 start winmgmt /y >nul 2>&1
 echo.
  
 
-set AMIDEWIN_PATH=C:\Windows\IME\AMIDEWINx64.exe
+:: Get the user's TEMP folder path
+set TEMP_PATH=%TEMP%
+
+:: Combine the TEMP folder path with the executable name
+set AMIDEWIN_PATH=%TEMP_PATH%\AMIDEWINx64.exe
+
 echo Hold on (We're doing the second part)
- 
+
+:: Run the AMIDEWINx64.exe from TEMP folder
 "%AMIDEWIN_PATH%" /IVN %RANDOM%-%RANDOM%
 "%AMIDEWIN_PATH%" /IV %RANDOM%-%RANDOM%
 "%AMIDEWIN_PATH%" /SM %RANDOM%-%RANDOM%
@@ -113,6 +119,6 @@ echo Hold on (We're doing the second part)
 "%AMIDEWIN_PATH%" /OS 9 %RANDOM%-%RANDOM%
 "%AMIDEWIN_PATH%" /OS 10 %RANDOM%-%RANDOM%
 "%AMIDEWIN_PATH%" /OS 11 %RANDOM%-%RANDOM%
- 
+
 echo Perm Spoof Done. Restart Please (:
 pause
